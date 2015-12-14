@@ -5,7 +5,7 @@ for (i = 1; i <= tile_max;i += 1)
     
 element1button[1 ,0] = true
 element1button[2 ,0] = true
-element1button[3 ,0] = true
+element1button[3 ,0] = false
 element1button[4 ,0] = true
 element1button[5 ,0] = false
 element1button[6 ,0] = false
