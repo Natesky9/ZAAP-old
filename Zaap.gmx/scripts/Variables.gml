@@ -9,10 +9,8 @@ the array of buttons,
 5 = x2
 6 = y2
 
-
-//test
-
-
-
+element1position[i,0] is the button?
+element1position[i,1] is x
+element1position[i,2] is y
 
 */
