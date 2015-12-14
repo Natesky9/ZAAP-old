@@ -66,8 +66,6 @@ for (iy = 0; iy &lt;= element1yspots-1; iy += 1)
         }
     }
 
-//tile_max is the number of blocks existing
-tile_max = 10
 //element1 buttons
 
 Buttons_Enable()
