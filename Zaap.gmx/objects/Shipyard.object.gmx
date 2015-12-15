@@ -66,6 +66,7 @@ for (iy = 0; iy &lt;= element1yspots-1; iy += 1)
         }
     }
 
+Inventory_Create()
 //element1 buttons
 
 Buttons_Enable()

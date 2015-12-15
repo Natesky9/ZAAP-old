@@ -15,8 +15,8 @@ if element1x != 0
         {//place the button locations
         for (ix = 1; ix <= element1xspots; ix += 1)
             {//orgin is top-left now
-            element1position[iy*element1xspots + ix,1] =shipyard_x1 - element1x +ix*32
-            element1position[iy*element1xspots + ix,2] =shipyard_y1 + (iy+1)*32
+            element1position[iy*element1xspots + ix,1] =shipyard_x1 - element1x +ix*24
+            element1position[iy*element1xspots + ix,2] =shipyard_y1 + (iy+1)*24
             }
         }
 
