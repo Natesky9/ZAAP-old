@@ -1,13 +1,14 @@
-global.part[0,0] = c_black
-global.part[1,0] = c_red
-global.part[2,0] = c_orange
-global.part[3,0] = c_yellow
-global.part[4,0] = c_green
-global.part[5,0] = c_blue
-global.part[6,0] = c_purple
-global.part[7,0] = c_maroon
-global.part[8,0] = c_aqua
-global.part[9,0] = c_fuchsia
+//define the colors for the parts
+global.part[0 ,0] = c_black
+global.part[1 ,0] = c_red
+global.part[2 ,0] = c_orange
+global.part[3 ,0] = c_yellow
+global.part[4 ,0] = c_green
+global.part[5 ,0] = c_blue
+global.part[6 ,0] = c_purple
+global.part[7 ,0] = c_maroon
+global.part[8 ,0] = c_aqua
+global.part[9 ,0] = c_fuchsia
 global.part[10,0] = c_lime
 
 //part localization
