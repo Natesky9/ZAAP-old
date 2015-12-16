@@ -62,7 +62,7 @@
   <objects name="objects">
     <object>objects\Ship</object>
     <object>objects\Shipyard</object>
-    <object>objects\object2</object>
+    <object>objects\GameObject</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

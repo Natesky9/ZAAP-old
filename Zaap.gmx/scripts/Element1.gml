@@ -1,5 +1,5 @@
 //draw element 1 box
-if element1x != 0
+if element1x > 0
     {//if the element is extended
     draw_set_color(c_green)
     draw_rectangle(shipyard_x1,shipyard_y1 + 1,shipyard_x1 - element1x,shipyard_y2,false)
@@ -32,7 +32,7 @@ if element1x != 0
             }
         }
     //end temp draw
-
+//----------------------------------------------------//
     //pair the buttons to the spots
     for (i = 1;i <= tile_max; i += 1)
         {

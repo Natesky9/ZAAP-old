@@ -30,18 +30,18 @@
 Part_Define()
 Ship_Surface_Create()
 Draw_Ship_Surface()
-nearest = instance_nearest(x,y,Shipyard)
-nearest.target = id
+if instance_exists(Shipyard)
+    {
+    nearest = instance_nearest(x,y,Shipyard)
+    nearest.target = id
+    }
 x = room_width/2
 y = room_height/2
 status = "docked"
 phase = 0
 direction = 90
 ship_direction = direction
-global.player_ship = id
-global.camera_focus = "on_ship"
-global.camera_mode = "still"
-global.zoom = 256
+
 
 global.camera_x1 = 0
 global.camera_y1 = 0
@@ -92,7 +92,7 @@ ship_y1 = y - ship_height/2
 ship_y2 = y + ship_height/2
 
 
-
+if instance_exists(Shipyard)
 Ship_Status()
 //camera scripts
 Camera_Center()
