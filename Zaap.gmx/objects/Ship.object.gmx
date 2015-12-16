@@ -219,7 +219,7 @@ view_hport[0] = 512
             <kind>1</kind>
             <string>
 draw_set_color(c_red)
-draw_line(x,y,mouse_x,mouse_y)
+
 Draw_Ship_Surface()
 
 //offset script for srawing rotated surface
@@ -227,7 +227,15 @@ rad = degtorad(direction-90); // Convert it to radian for convenience
 xorg = cos(rad)*(ship_width+32)/2 + sin(rad)*(ship_height+32)/2;
 yorg = -sin(rad)*(ship_width+32)/2 + cos(rad)*(ship_height+32)/2;
 //end offset script
-draw_surface_ext(ship_surface,x-xorg+1,y-yorg+1,1,1,direction-90,c_white,255)
+if status != "docked"
+    {
+    draw_surface_ext(ship_surface,x-xorg+1,y-yorg+1,1,1,direction-90,c_white,255)
+    draw_set_color(c_blue)
+    draw_line(mouse_x,mouse_y,ship_x1,ship_y1)
+    draw_line(mouse_x,mouse_y,ship_x2,ship_y2)
+    draw_set_color(c_green)
+    draw_line(x,y,mouse_x,mouse_y)
+    }
 
 //draw_sprite_ext(ship_sprite,0,x,y,1,1,direction-90,c_white,255)
 draw_set_color(c_black)
@@ -246,7 +254,7 @@ draw_line(x,y,nearest.x-nearest.shipyard_width/2,nearest.y-nearest.shipyard_heig
 draw_rectangle(ship_x1,ship_y1,ship_x2,ship_y2,true)
 //draw line to mouse
 draw_set_color(c_red)
-draw_line(mouse_x,mouse_y,ship_x1,ship_y1)
+
 draw_set_color(c_navy)
 draw_text(mouse_x,mouse_y - 32,"[" + string(global.ix) + "," + string(global.iy) + "]")
 draw_text(mouse_x,mouse_y - 64,"Part: " + string(ship_array[global.ix,global.iy]))

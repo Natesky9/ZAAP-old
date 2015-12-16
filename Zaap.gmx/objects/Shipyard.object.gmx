@@ -65,6 +65,12 @@ for (iy = 0; iy &lt;= element1yspots-1; iy += 1)
         element1position[iy*element1xspots + ix,2] =shipyard_y1 + (iy+1)*32
         }
     }
+    
+//add the shipyard arms to build parts
+//for now, follows the mouse
+//starts at the top-left corner
+shipyard_xarm = 0
+shipyard_yarm = 0
 
 Inventory_Create()
 //element1 buttons
@@ -126,6 +132,11 @@ if target == global.player_ship
         element3y += 1
         }
     else element3y = element3max
+    
+    //shipyard arms
+    //clamp to the shipyard boundary
+    shipyard_xarm = max(0,min(mouse_x - shipyard_x1,shipyard_width))
+    shipyard_yarm = max(0,min(mouse_y - shipyard_y1,shipyard_height))
     }
     
 //------------------------//
@@ -144,9 +155,41 @@ if target == 0
         element3y -= 4
         }
     }
+    
 
-room_caption = global.selection
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="54">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if mouse_x &gt; shipyard_x1 &amp;&amp; mouse_x &lt; shipyard_x2
+&amp;&amp; mouse_y &gt; shipyard_y1 &amp;&amp; mouse_y &lt; shipyard_y2
+    {//if the mouse is in the edit zone
+    if mouse_x &gt; target.ship_x1 &amp;&amp; mouse_x &lt; target.ship_x2
+    &amp;&amp; mouse_y &gt; target.ship_y1 &amp;&amp; mouse_x &lt; target.ship_y2
+        {//if it's inside the ship's bounding box
+        xx = 2+floor((mouse_x - target.ship_x1)/16-1)
+        yy = 2+floor((mouse_y - target.ship_y1)/16-1)
+        target.ship_array[xx,yy] = -1
+        }
+    }
 </string>
           </argument>
         </arguments>
@@ -246,6 +289,8 @@ if target == global.player_ship
     }
 
 draw_text(mouse_x,mouse_y+32,Button_To_Part(global.selection))
+
+
 
 //draw_line(mouse_x,mouse_y,element1button[1,1],element1button[1,2])
 </string>
