@@ -13,11 +13,11 @@ if mouse_x > shipyard_x1 && mouse_x < shipyard_x2
 //-------------------------------------------//
 //element 1
 if mouse_x < shipyard_x1 && mouse_x > shipyard_x1 - element1x
-&& mouse_y > shipyard_y1 && mouse_y < shipyard_y2
+&& mouse_y > shipyard_y1 && mouse_y < shipyard_y2+80
     {
 
 
-    for (i = 1;i <=tile_max;i += 1)
+    for (i = 1;i <=global.part_max;i += 1)
         {
         if element1button[i,0]
             {

@@ -1,7 +1,7 @@
 //zoom is the target width to zoom to
 zoom = global.zoom
 //pix is the number to zoom by
-pix = 1
+pix = 2
 //view_w[0]
 global.camera_mode = "zooming"
 

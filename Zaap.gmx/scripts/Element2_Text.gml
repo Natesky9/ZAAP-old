@@ -52,7 +52,7 @@ else
     
 if string_pos("button",text)
     {//if it's a button, localize it
-    name = Button_Localize(text)
+    name = Part_Localize(text)
     }
 else
     {//display the raw name

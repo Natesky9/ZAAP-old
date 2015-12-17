@@ -46,7 +46,9 @@ target = 0
 
 //element 1 is the left selection pane
 element1x = 0
-element1max = 128
+element1max = 160
+//element1y is the vertical scrolling
+element1y = 0
 element2x = 0
 element2max = 160
 element3y = 0
@@ -54,7 +56,7 @@ element3max = 80
 
 //calculate how many spots
 element1xspots = floor((element1max - 32) /32)
-element1yspots = floor((shipyard_height - 32) /32)
+element1yspots = ceil(global.part_max/element1xspots)+1
 element1spots = element1xspots * element1yspots
 
 for (iy = 0; iy &lt;= element1yspots-1; iy += 1)
@@ -72,10 +74,10 @@ for (iy = 0; iy &lt;= element1yspots-1; iy += 1)
 shipyard_xarm = 0
 shipyard_yarm = 0
 
+//create the shipyard inventory
 Inventory_Create()
-//element1 buttons
 
-Buttons_Enable()
+Parts_Enable()
 //enable a few
 
 
@@ -162,6 +164,52 @@ if target == 0
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="61">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>element1y -= 4
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="60">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>element1y += 4
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="54">
       <action>
         <libid>1</libid>
@@ -187,6 +235,8 @@ if target == 0
         {//if it's inside the ship's bounding box
         xx = 2+floor((mouse_x - target.ship_x1)/16-1)
         yy = 2+floor((mouse_y - target.ship_y1)/16-1)
+        if target.ship_array[xx,yy] &gt; 0
+        inventory[target.ship_array[xx,yy]] += 1
         target.ship_array[xx,yy] = -1
         }
     }
@@ -288,7 +338,7 @@ if target == global.player_ship
     Element2_Text(global.selection,"bottom-left")
     }
 
-draw_text(mouse_x,mouse_y+32,Button_To_Part(global.selection))
+//draw_text(mouse_x,mouse_y+32,Button_To_Part(global.selection))
 
 
 

@@ -43,20 +43,6 @@ direction = 90
 ship_direction = direction
 
 
-global.camera_x1 = 0
-global.camera_y1 = 0
-global.camera_x2 = 0
-global.camera_y2 = 0
-
-//view[0] is the ship view
-view_enabled = true
-view_visible[0] = true
-view_wview[0] = 64
-view_hview[0] = 64
-view_xview[0] = x-view_wview[0]/2
-view_xview[0] = y-view_hview[0]/2
-//view_x1
-//view_y1
 
 
 global.ix = 0
@@ -119,9 +105,12 @@ Camera_Zoom()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.zoom -= 1
-if keyboard_check(vk_space)
-global.zoom -= 100
+            <string>if status != "docked"
+    {
+    global.zoom -= 1
+    if keyboard_check(vk_space)
+    global.zoom -= 100
+    }
 </string>
           </argument>
         </arguments>
@@ -144,9 +133,12 @@ global.zoom -= 100
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.zoom += 1
-if keyboard_check(vk_space)
-global.zoom += 100
+            <string>if status != "docked"
+    {
+    global.zoom += 1
+    if keyboard_check(vk_space)
+    global.zoom += 100
+    }
 </string>
           </argument>
         </arguments>
@@ -241,8 +233,8 @@ if status != "docked"
 draw_set_color(c_black)
 draw_set_halign(fa_center)
 draw_text(x,y+40,status)
-draw_text(x,y+160,"Phase " + string(phase))
-draw_text(x,y+192,"Heading: " + string(direction))
+draw_text(x,y+240,"Phase " + string(phase))
+draw_text(x,y+256,"Heading: " + string(direction))
 draw_set_color(c_white)
 draw_rectangle(0,0,room_width,room_height,true)
 

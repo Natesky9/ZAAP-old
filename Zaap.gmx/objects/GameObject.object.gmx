@@ -29,8 +29,23 @@
 Part_Define()
 global.camera_focus = "on_ship"
 global.camera_mode = "still"
-global.zoom = 256
+global.zoom = 512
 
+global.camera_x1 = 0
+global.camera_y1 = 0
+global.camera_x2 = 0
+global.camera_y2 = 0
+
+//view[0] is the ship view
+view_enabled = true
+view_visible[0] = true
+//temp values for now
+view_wview[0] = 176
+view_hview[0] = 176
+view_xview[0] = x-view_wview[0]/2
+view_xview[0] = y-view_hview[0]/2
+//view_x1
+//view_y1
 
 
 
@@ -39,7 +54,10 @@ global.zoom = 256
 //Create a ship and set it to the player
 global.player_ship = instance_create(room_width/2,room_height/2,Ship)
 //Create a shipyard
-instance_create(room_width/2,room_height/2,Shipyard)
+with instance_create(room_width/2,room_height/2,Shipyard)
+    {
+    target = global.player_ship
+    }
 </string>
           </argument>
         </arguments>

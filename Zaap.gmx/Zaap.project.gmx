@@ -12,6 +12,7 @@
     <sound>sound\timer</sound>
     <sound>sound\click_low</sound>
     <sound>sound\beep</sound>
+    <sound>sound\no</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
@@ -48,12 +49,14 @@
     </scripts>
     <script>scripts\Variables.gml</script>
     <script>scripts\Play_Sound.gml</script>
-    <script>scripts\Part_Get.gml</script>
-    <script>scripts\Button_To_Part.gml</script>
-    <script>scripts\Part_Define.gml</script>
-    <script>scripts\Buttons_Enable.gml</script>
+    <script>scripts\Parts_Enable.gml</script>
+    <script>scripts\Part_Localize.gml</script>
+    <scripts name="Part Scripts">
+      <script>scripts\Part_Get.gml</script>
+      <script>scripts\Part_Define.gml</script>
+      <script>scripts\Button_To_Part.gml</script>
+    </scripts>
     <script>scripts\Inventory_Create.gml</script>
-    <script>scripts\Button_Localize.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\blockfont</font>

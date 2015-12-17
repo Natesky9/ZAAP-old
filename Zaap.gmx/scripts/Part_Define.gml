@@ -1,3 +1,6 @@
+//part_max is the number of blocks existing
+global.part_max = 10
+
 //define the colors for the parts
 global.part[0 ,0] = c_black
 global.part[1 ,0] = c_red

@@ -5,10 +5,22 @@ if string_pos("element0",t)
     {//if it's in element 0
     if string_pos("button",global.selection)
         {//if you have a button selected
-        target.ship_array[global.ix,global.iy] = Button_To_Part(global.selection)
-        Play_Sound(weld)
-        with target
-        Draw_Ship_Surface()
+        i = Button_To_Part(global.selection)
+        if inventory[i]
+            {//if there is one part to place
+            if target.ship_array[global.ix,global.iy] > 0
+                {//reclaim the part already there, if any
+                inventory[target.ship_array[global.ix,global.iy]] += 1
+                }
+            //place the new part
+            target.ship_array[global.ix,global.iy] = i
+            //deduct it from inventory
+            inventory[i] -= 1
+            Play_Sound(weld)
+            }
+        else Play_Sound(no)
+//        with target
+//        Draw_Ship_Surface()
         }
     exit
     }
