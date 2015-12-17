@@ -47,16 +47,19 @@
       <script>scripts\Element_Get.gml</script>
       <script>scripts\Element_Click.gml</script>
     </scripts>
-    <script>scripts\Variables.gml</script>
-    <script>scripts\Play_Sound.gml</script>
-    <script>scripts\Parts_Enable.gml</script>
-    <script>scripts\Part_Localize.gml</script>
+    <scripts name="Inventory Scripts">
+      <script>scripts\Inventory_Create.gml</script>
+    </scripts>
     <scripts name="Part Scripts">
       <script>scripts\Part_Get.gml</script>
       <script>scripts\Part_Define.gml</script>
       <script>scripts\Button_To_Part.gml</script>
+      <script>scripts\Part_Localize.gml</script>
+      <script>scripts\Parts_Enable.gml</script>
     </scripts>
-    <script>scripts\Inventory_Create.gml</script>
+    <script>scripts\Variables.gml</script>
+    <script>scripts\Play_Sound.gml</script>
+    <script>scripts\script27.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\blockfont</font>
