@@ -26,3 +26,7 @@ global.part[7 ,1] = "NYI"
 global.part[8 ,1] = "NYI"
 global.part[9 ,1] = "NYI"
 global.part[10,1] = "NYI"
+
+/*
+add "advanced" and another tier?
+*/

@@ -60,6 +60,7 @@
     <script>scripts\Variables.gml</script>
     <script>scripts\Play_Sound.gml</script>
     <script>scripts\script27.gml</script>
+    <script>scripts\Calculate.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\blockfont</font>
